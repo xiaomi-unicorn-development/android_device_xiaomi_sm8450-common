@@ -110,4 +110,10 @@
     <string-array name="config_biometric_sensors" translatable="false">
         <item>0:2:15</item>
     </string-array>
+    
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/qcom-battery/fastchg_mode</string>
+
+    <!-- Expected value from fast charging status file -->
+    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
 </resources>
