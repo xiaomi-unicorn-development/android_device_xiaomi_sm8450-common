@@ -8,7 +8,8 @@
 include vendor/xiaomi/sm8450-common/BoardConfigVendor.mk
 
 COMMON_PATH := device/xiaomi/sm8450-common
-
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # A/B
 AB_OTA_UPDATER := true
 
@@ -90,7 +91,7 @@ TARGET_NEEDS_DTBOIMAGE := true
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_IMAGE_NAME := Image
-
+TARGET_KERNEL_CLANG_VERSION := r487747c
 TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8450
 TARGET_KERNEL_CONFIG := \
@@ -181,7 +182,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/aosp/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -243,7 +244,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/vintf/device_framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/aosp/config/device_framework_matrix.xml
 
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/vintf/framework_manifest.xml
 
